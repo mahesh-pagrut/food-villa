@@ -17,6 +17,21 @@ const Cart = () => {
         </div>
         <br/>
         <hr/>
+        {food_list.map((item,index) => {
+            if(cartItems[item._id]>0)
+            {
+              return (
+                <div className='cart-items-title cart-items-item'>
+                    <img src={item.image} alt="item-image" />
+                    <p>{item.name}</p>
+                    <p>{item.price}</p>
+                    <p>{cartItems[item.id]}</p>
+                    <p>{item.price*cartItems[item._id]}</p>
+                    <p>X</p>
+                </div>
+              )
+            }
+        })}
       </div>
     </div>
   )
