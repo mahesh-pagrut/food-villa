@@ -39,7 +39,6 @@ const Footer = () => {
         <p className='footer-copyright'>
          © 2025  YumStore. All rights reserved. | Your favorite dishes, delivered fresh! 
         </p>
-
     </div>
   )
 }
