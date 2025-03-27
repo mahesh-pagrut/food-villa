@@ -5,7 +5,7 @@ import { FiSearch} from "react-icons/fi";
 import { FaShoppingBasket } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({setShowLogin}) => {
     const [menu, setMenu] = useState('home')
   return (
     <div className='navbar'>
@@ -22,7 +22,7 @@ const Navbar = () => {
                 <FaShoppingBasket className="icon" />
                 <div className='dot'></div>
             </div>
-            <button className='sign-in'>Sign In</button>
+            <button className='sign-in' onClick={() => setShowLogin(true)}>Sign In</button>
         </div>
     </div>
   )
