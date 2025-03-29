@@ -5,8 +5,8 @@
     align-items: center;
 }
 
-.navbar.logo{
-    width: 150px;
+.navbar .logo{
+    width: 120px;
 
 }
 
