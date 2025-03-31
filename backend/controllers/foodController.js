@@ -1,4 +1,6 @@
 import foodModel from "../models/foodModel.js";
+import fs from "fs";
+import path from "path";
 
 // Add Food Item
 const addFood = async (req, res) => {
@@ -40,17 +42,28 @@ const listFood = async (req, res)=>{
 }
 
 //remove food item 
-const removeFood = async (req,res) => {
+const removeFood = async (req, res) => {
     try {
-        const food = await foodModel.findById(req.body.id)
-        fs.unlink(`uploads/${food.image}`, ()=>{})
-
-        await foodModel.findByIdAndDelete(req.body.id);
-        res.json({success:true, message:"Food Removed"})
+      const food = await foodModel.findById(req.body.id);
+  
+      if (!food) {
+        return res.status(404).json({ success: false, message: "Food item not found" });
+      }
+  
+      // Remove Image File (Ensure correct path)
+      const imagePath = path.join(path.resolve(), food.image); // Full absolute path
+      if (fs.existsSync(imagePath)) {
+        fs.unlinkSync(imagePath);
+      }
+  
+      // Remove from Database
+      await foodModel.findByIdAndDelete(req.body.id);
+      res.json({ success: true, message: "Food Removed" });
+  
     } catch (error) {
-        console.log(error);
-        res.json({success:false, message:"Error"})
+      console.error("Error removing food:", error);
+      res.status(500).json({ success: false, message: "Error removing food" });
     }
-}
-
+  };
+  
 export { addFood, listFood, removeFood };
