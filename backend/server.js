@@ -27,6 +27,7 @@ connectDB();
 
 // API Endpoints
 app.use("/api/food", foodRoute);
+app.use("/images",express.static('uploads'))
 
 // Test Route
 app.get("/", (req, res) => {

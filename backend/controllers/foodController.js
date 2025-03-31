@@ -28,4 +28,9 @@ const addFood = async (req, res) => {
   }
 };
 
-export { addFood };
+// all food list
+const listFood = async (req, res)=>{
+
+}
+
+export { addFood, listFood };
