@@ -13,15 +13,15 @@
 }
 
 
-.add-img-upload img{
+.add-image-upload img{
  width: 120px;
 }
 
 .add-product-name, .add-product-description{
-    width:max(40%, 280px) ;
+    width: max(40%, 280px) ;
 }
 
-.add-product-name input .add-product-description textarea{
+.add-product-name input, .add-product-description textarea{
     padding: 10px;
 }
 
