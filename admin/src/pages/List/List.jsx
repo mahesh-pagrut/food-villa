@@ -40,7 +40,7 @@ const List = () => {
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>${item.price}</p>
-              <p>X</p>
+              <p className='cursor'>X</p>
             </div>
           )
         })}

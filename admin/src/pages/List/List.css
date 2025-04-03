@@ -19,4 +19,18 @@
 .list-table-format img {
     width: 50px;
   }
+
+.cursor{
+    cursor: pointer;
+}
   
+
+@media (max-width:600px){
+    .list-table-format{
+        grid-template-columns: 1fr 3fr 1fr;
+        gap: 15px;
+    }
+    .list-table-format.title{
+        display: none;
+    }
+}
