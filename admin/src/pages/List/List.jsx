@@ -23,7 +23,29 @@ const List = () => {
   },[])
 
   return (
-    <div></div>
+    <div className='list add flex-col'>
+      <p>All Foods List</p>
+      <div className="list-table">
+        <div className="list-table-format title">
+          <b>Image</b>
+          <b>Name</b>
+          <b>Category</b>
+          <b>Price</b>
+          <b>Action</b>
+        </div>
+        {list.map((item, index) => {
+          return(
+            <div key={index} className='list-table-format'>
+              <img src={`${url}${item.image}`} alt={item.name} />
+              <p>{item.name}</p>
+              <p>{item.category}</p>
+              <p>${item.price}</p>
+              <p>X</p>
+            </div>
+          )
+        })}
+      </div>
+    </div>
   )
 }
 
