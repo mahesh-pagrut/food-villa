@@ -97,6 +97,22 @@
     z-index: 1;
 }
 
+.navbar-profile-dropdown a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .navbar-profile-dropdown li:hover {
+    background-color: #ffe8e4;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    padding: 8px;
+  }
+  
+
 .navbar-profile-dropdown img{
     width: 20px;
 }
