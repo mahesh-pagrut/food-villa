@@ -9,14 +9,21 @@ const List = ({url}) => {
 
 
   const fetchList = async () => {
-    const response = await axios.get(`${url}/api/food/list`)
-    // console.log(response.data)
-    if (response.data.success){
-      setList(response.data.data)
-    }else{
-      toast.error("Error")
+    try {
+      const response = await axios.get(`${url}/api/food/list`);
+      console.log("Fetched List:", response.data); // ✅ Add this
+  
+      if (response.data.success) {
+        setList(response.data.data);
+      } else {
+        toast.error("Error fetching list");
+      }
+    } catch (err) {
+      toast.error("List fetch failed");
+      console.error(err);
     }
   }
+  
 
   const removeFood = async (foodId) => {
     const response = await axios.post(`${url}/api/food/remove`, {id:foodId})
@@ -44,6 +51,7 @@ const List = ({url}) => {
           <b>Action</b>
         </div>
         {list.map((item, index) => {
+          console.log("Image URL:", `${url}${item.image}`);
           return(
             <div key={index} className='list-table-format'>
               <img src={`${url}${item.image}`} alt={item.name} />
