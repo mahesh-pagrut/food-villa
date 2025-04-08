@@ -75,7 +75,7 @@ const Navbar = ({ setShowLogin }) => {
               <hr />
               <li>
                 <a
-                  href="https://food-del-admin-orpin.vercel.app/"
+                  href="https://food-del-admin-git-main-mahesh-pagruts-projects.vercel.app/add"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
