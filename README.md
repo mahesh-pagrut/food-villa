@@ -75,7 +75,7 @@ npm run dev
 ```
 **Food-Villa will now be running at**  (http://localhost:3000/) 🎉
 
-### 📸 Using CoinPulse
+### 📸 Using FoodVill
 
 - 1️⃣ Browse food and add items to your cart.
 - 2️⃣ Sign in to place orders and view order history.
