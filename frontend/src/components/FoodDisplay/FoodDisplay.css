@@ -17,7 +17,7 @@
     row-gap: 50px;
 }
 
-.loading-animation {
+.loading-lottie {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,11 +25,8 @@
     width: 100%;
 }
 
-.loading-animation video {
+.loading-lottie canvas {
     max-height: 200px;
     width: auto;
-    object-fit: contain;
-    border-radius: 12px;
 }
-
 

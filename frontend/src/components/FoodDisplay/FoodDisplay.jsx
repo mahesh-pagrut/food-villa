@@ -2,15 +2,17 @@ import React, { useContext } from "react";
 import "./FoodDisplay.css";
 import { StoreContext } from "../../context/StoreContext";
 import FoodItem from "../FoodItem/FoodItem";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const FoodDisplay = ({ category }) => {
   const { food_list } = useContext(StoreContext);
+
   return (
     <div className="food-display" id="food-display">
       <h2>Top dishes near you</h2>
       <div className="food-display-list">
         {food_list && food_list.length > 0 ? (
-          food_list.map((item, index) => {
+          food_list.map((item) => {
             if (category === "All" || category === item.category) {
               return (
                 <FoodItem
@@ -27,11 +29,12 @@ const FoodDisplay = ({ category }) => {
             }
           })
         ) : (
-          <div className="loading-animation">
-            <video autoPlay loop muted playsInline>
-              <source src="/assets/loadFood.webm" type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
+          <div className="loading-lottie">
+            <DotLottieReact
+              src="https://lottie.host/a9cfd994-3472-45fc-a1d5-e4e304bec762/6OfLqdXF9q.lottie"
+              loop
+              autoplay
+            />
           </div>
         )}
       </div>
