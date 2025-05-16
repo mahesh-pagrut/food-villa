@@ -27,7 +27,12 @@ const FoodDisplay = ({ category }) => {
             }
           })
         ) : (
-          <p>Loading items...</p> // or show a spinner here
+          <div className="loading-animation">
+            <video autoPlay loop muted playsInline>
+              <source src="/assets/loadFood.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         )}
       </div>
     </div>
